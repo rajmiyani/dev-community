@@ -51,7 +51,9 @@ module.exports={
 
         var data = await queansModel.find({course:req.user.course}).populate({path:'adminId',model:'admin'})
         //console.log(data);
-        res.render('alldata',{data})
+        var user = req.user
+
+        res.render('alldata',{data,user})
     },
     answer:async(req,res)=>{
         var data = await queansModel.findById(req.params.id).populate({path:'adminId',model:'admin'});
