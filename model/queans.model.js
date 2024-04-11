@@ -9,6 +9,7 @@ const queansSchema =new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'admin'
     },
+    file:String,
 },{timestamps:true})
 
 module.exports = mongoose.model('queans',queansSchema)
