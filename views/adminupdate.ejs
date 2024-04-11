@@ -429,6 +429,16 @@
       </div>
     </div>
     <div class="container py-4">
+      <p class="text-successs">
+        <% if(messages.success){%>
+          <%=messages.success%>
+          <%}%>
+      </p>
+      <p class="text-danger">
+        <% if(messages.error){%>
+          <%=messages.error%>
+          <%}%>
+      </p>
       <div class="row">
         <div class="col-lg-12">
           <div class="card h-100 ">
@@ -436,11 +446,6 @@
               <div class="row">
                 <div class="col-md-8 d-flex align-items-center">
                   <h6 class="mb-0">Profile Information</h6>
-                </div>
-                <div class="col-lg-12 text-end">
-                  <a href="/adminupdate">
-                    <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
-                  </a>
                 </div>
               </div>
             </div>

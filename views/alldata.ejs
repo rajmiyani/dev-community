@@ -329,6 +329,16 @@
           <div class="card">
             <div class="card-header pb-0 px-3">
               <h6 class="mb-">Question Info</h6>
+              <p class="text-successs">
+                <% if(messages.success){%>
+                  <%=messages.success%>
+                  <%}%>
+              </p>
+              <p class="text-danger">
+                <% if(messages.error){%>
+                  <%=messages.error%>
+                  <%}%>
+              </p>
             </div>
 
             <table class="p-3">

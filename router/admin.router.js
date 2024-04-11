@@ -12,12 +12,19 @@ router.get('/answer/:id',middleware,controller.answer)
 router.get('/admintable',middleware,controller.admintable)
 router.get('/profile',middleware,controller.profile)
 router.get('/adminupdate/:id',middleware,controller.adminupdate)
+router.get('/forgotpassword',controller.forgotpassword)
+router.get('/otp',controller.otp)
+router.get('/resetpassword',controller.resetpassword)
 
 router.post('/login',controller.loginform)
 router.post('/question',middleware,controller.questionform)
 router.post('/answer/:id',middleware,controller.answerform)
 router.post('/addprofileform',middleware,controller.addprofileform)
 router.post('/adminupdate/:id',middleware,controller.adminupdateform)
+router.post('/forgotpassword',controller.forgotpasswordform)
+router.post('/otp',controller.otpform)
+router.post('/resetpassword',controller.resetpasswordform)
+
 
 router.get('/logout',middleware,(req,res)=>{
     res.cookie('token',"")

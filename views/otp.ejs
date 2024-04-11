@@ -45,36 +45,19 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Welcome Back</h3>
-                  <p class="mb-0">Enter your Email and Password to Sign In</p>
-                  <p class="text-successs">
-                    <% if(messages.success){%>
-                      <%=messages.success%>
-                      <%}%>
-                  </p>
-                  <p class="text-danger">
-                    <% if(messages.error){%>
-                      <%=messages.error%>
-                      <%}%>
-                  </p>
+                  <h3 class="font-weight-bolder text-info text-gradient">Forget Password</h3>
+                  <p class="mb-0">Enter your Email For Forget Password</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" action="/login" method="post">
-                    <label>Email</label>
+                  <form role="form" action="/otp" method="post">
+                    <label>OTP</label>
                     <div class="mb-3">
-                      <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
-                    </div>
-                    <label>Password</label>
-                    <div class="mb-3">
-                      <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                      <input type="number" name="otp" class="form-control" placeholder="Otp" aria-label="Otp" aria-describedby="email-addon">
                     </div>
                     <div class="text-center">
-                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Submit</button>
                     </div>
                   </form>
-                </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                    <a href="/forgotpassword" class="text-info text-gradient font-weight-bold">Forget Password</a>
                 </div>
               </div>
             </div>

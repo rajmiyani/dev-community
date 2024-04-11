@@ -10,6 +10,15 @@ app.set(express.static(path.join(__dirname,"views")))
 app.use(express.static(path.join(__dirname,"assets")))
 require('./mongoose')
 app.use(cookieParser())
+var session = require('express-session')
+app.use(session({
+    secret:"developer",
+    cookie:{
+        maxAge:2000
+    }
+}))
+var flash = require('express-flash')
+app.use(flash())
 
 app.use('/',require('./router/admin.router'))
 
