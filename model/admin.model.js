@@ -7,6 +7,7 @@ var adminSchema = new mongoose.Schema({
     mobileNumber: String,
     img:String,
     course:String,
+    otp:String
 },{timestamps:true})
 
 module.exports = mongoose.model('admin',adminSchema)

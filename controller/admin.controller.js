@@ -13,7 +13,14 @@ module.exports={
         res.render('login')
     },
     loginform:async(req,res)=>{
-        var data = await adminModel.findOne({email:req.body.email})
+        var data = await adminModel.findOne({
+        $and:[{
+                email:req.body.email
+            },
+            {
+                name:req.body.name
+            }]
+        })
         if(data){
             if(data.password == req.body.password){
                 var token = jwt.sign({id:data._id},'devloper')
@@ -54,12 +61,12 @@ module.exports={
         }
     },
     alldata:async(req,res)=>{
-
+        var admindata = await adminModel.find()
         var data = await queansModel.find({course:req.user.course}).populate({path:'adminId',model:'admin'})
         //console.log(data);
         var user = req.user
 
-        res.render('alldata',{data,user})
+        res.render('alldata',{data,user,admindata})
     },
     answer:async(req,res)=>{
         var data = await queansModel.findById(req.params.id).populate({path:'adminId',model:'admin'});
@@ -126,7 +133,7 @@ module.exports={
                 var transport = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: 'vishrutimorsy@gmail.com',
+                        user: 'vishrutimorsy1996@gmail.com',
                         pass: 'vgxxnnhumsnvkdhz'
                     }
                 })
@@ -154,7 +161,7 @@ module.exports={
     },
     otpform:async(req,res)=>{
         console.log(req.body);
-        console.log(req.cookie);
+        console.log(req.cookies);
         
         var data = await adminModel.findOne({email:req.cookies.email})
         console.log(data);
