@@ -14,7 +14,7 @@ module.exports={
     },
     loginform:async(req,res)=>{
         var data = await adminModel.findOne({
-        $and:[{
+        $or:[{
                 email:req.body.email
             },
             {
